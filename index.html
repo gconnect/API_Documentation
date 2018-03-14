@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/app.js"></script>
+
+	<title>Api Documentation</title>
+</head>
+<body>
+	
+	<div class="row">
+		<div class="col s12 m9 l10">
+		<div class ="wrapper">
+			<!-- Authentication  -->
+	  		<div id="authentication" class="section scrollspy">
+	  			<h5>Authentication</h5>
+			   	<p class ="title"><b>POST 		/oauth/token?_format=api_json </b></p>
+			   	<p class="header"><b>HEADER</b></p>
+			    <pre class="content-Type">
+
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+    	{
+    		client_id:e162746a-f1d5-44c3-9bb5-eb2b595f6b44
+		grant_type:password
+		client_secret:welcomewelcome
+		password:password
+		username:ufere
+    	}
+			    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+					<!-- registrtion	 -->
+		    <div id="registration" class="section scrollspy">
+		    	<h5>Registration</h5>
+		       	<p class ="title"><b>POST 		/user/register?_format=json </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+
+	<code>Content-Type: application/json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code class="request-format2">
+    	{
+		"name": ["gloryBlue"],
+		"mail": ["gaga@gmail"],
+		"pass": ["password"]
+    	}
+			    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		      		<!-- refresh-token -->
+		    <div id="refresh-token" class="section scrollspy">
+		    	<h5>Refresh Token</h5>
+		       	<p class ="title"><b>POST 		/oauth/token?_format=api_json </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+    	{
+		client_id:e162746a-f1d5-44c3-9bb5-eb2b595f6b44
+		grant_type:refresh_token
+		client_secret:welcomewelcome
+		refresh_token:refresh_token
+    	}
+			    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+					      		<!-- create offer -->
+		    <div id="create-offer" class="section scrollspy">
+		    	<h5>Create Offer</h5>
+		       	<p class ="title"><b>POST 	/api/offer/offer </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Authorization: "Bearer " + access_token</code>
+	<code>Content-Type: application/vnd.api+json</code>
+
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	   {
+	    "data": {
+	        "type": "offer--offer",
+	        "attributes": {
+	            "langcode": "en",
+	            "broker_fee": "200.00",
+	            "location": "Akwa Ibom",
+	            "minimum_value": "1500.00",
+	            "status": "open",
+	            "value": "2500.00",
+	            "rate": "375.15",
+	            "expiry": 1512080715,
+	            "reference_number": "REF123234",
+	            "title": "REF123234"
+	        },
+	        "relationships": {
+	            "uid": {
+	                "data": {
+	                    "type": "users",
+	                    "id": "8b571f2c-58ed-4dce-bc9a-df7576d8ebdb"
+	                }
+	            }
+	        }
+	    }
+	}
+				    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    <!--get offer -->
+		    <div id="get-offer" class="section scrollspy">
+		    	<h5>GET Offer</h5>
+		       	<p class ="title"><b>GET 	/api/offer/offer/offer_uuid </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Authorization: "Bearer " + access_token</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	 No request body required
+				    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+			<!--GET offers -->
+		    <div id="get-offers" class="section scrollspy">
+		    	<h5>GET Offers</h5>
+		       	<p class ="title"><b>GET 	/api/offer/offer </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	 No request body required
+				    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+		    <!--create bid -->
+		    <div id="create-bid" class="section scrollspy">
+		    	<h5>Create Bid</h5>
+		       	<p class ="title"><b>POST	/api/bid/bid </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type:application/vnd.api+json</code>
+	<code>Authorization:"Bearer " +  access_token</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	{
+	  "data":
+	  {
+	    "type":"bid--bid",
+	    "relationships":
+	    {
+	      "owner":
+	      {
+	        "data":
+	        {
+	          "id":"dc2d124e-579d-4581-9b15-21e047836c1d",
+	          "type":"users"
+	        }
+	      },
+	      "offer":
+	      {
+	        "data":
+	        {
+	          "id":"8f86b904-c591-40b2-84e8-6523a5d3cc61",
+	          "type":"offer--offer"
+	        }
+	      }
+	    },
+	    "attributes":
+	    {
+	      "reference_number":"BID-0.420145739029431860.46295161181347766",
+	      "title":"BID-0.420145739029431860.46295161181347766",
+	      "broker_fee":189.075,
+	      "rate":378.15,
+	      "status":"pending",
+	      "location":"378.15",
+	      "value":378.15,
+	      "expiry_date":"2017-11-30 10:00:00",
+	      "langcode":"en"
+	    }
+	  }
+	}
+				    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		  	<!--GET user -->
+		    <div id="get-user" class="section scrollspy">
+		    	<h5>GET User</h5>
+		       	<p class ="title"><b>GET 	/api/users/user_uuid_format=api_json </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	 No request body required
+				    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    <!--GET user by username -->
+		    <div id="get-user-by-username" class="section scrollspy">
+		    	<h5>GET User by Username</h5>
+		       	<p class ="title"><b>GET /api/users?filter[name][value]=user_name </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	 No request body required
+				    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>	
+
+		    <!--Save offer -->
+		    <div id="save-offer" class="section scrollspy">
+		    	<h5>Save Offer</h5>
+		       	<p class ="title"><b>POST 	/api/offer/offer</b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	{
+	    "data": {
+	        "type": "offer--offer",
+	        "attributes": {
+	            "langcode": "en",
+	            "broker_fee": "200.00",
+	            "location": "Warri",
+	            "minimum_value": "2000.00",
+	            "offer_status": "open",
+	            "offer_value": "4000.00",
+	            "rate": "375.15",
+	            "expiry_date":"2017-11-12 10:34:12",
+	            "reference_number": "REF123",
+	            "title": "REF1231"
+	        },
+	        "relationships": {
+	            "offer_owner": {
+	                "data": {
+	                    "type": "users",
+	                    "id": "8b571f2c-58ed-4dce-bc9a-df7576d8ebdb"
+	                }
+	            }
+	        }
+	    }
+	}
+				    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    <!--GET available offers -->
+		    <div id="get-available-offers" class="section scrollspy">
+		    	<h5>GET Available Offers</h5>
+		       	<p class ="title"><b>GET 	/api/offer/offer?filter[offer_status][value]=open </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	 No request body required!
+				    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    <!--GET user available offers -->
+		    <div id="get-user-available-offers" class="section scrollspy">
+		    	<h5>GET User Available Offers</h5>
+		       	<p class ="title"><b>GET 	/api/offer/offer?filter[offer_status][value]=user_name </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	 No request body required
+				    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    <!--UPDATE offer -->
+		    <div id="update-offer" class="section scrollspy">
+		    	<h5>UPDATE Offer</h5>
+		       	<p class ="title"><b>PATCH 	/api/offer/offer/user_uuid_format=json </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	{
+	    "data": {
+	        "type": "offer--offer",
+	        "attributes": {
+	            "minimum_value": "1500.00"
+	        },
+	        "relationships": {
+	            "offer_owner": {
+	                "data": {
+	                    "type": "users",
+	                    "id": "88b571f2c-58ed-4dce-bc9a-df7576d8ebdb"
+	                }
+	            }
+	        }
+	    }
+	}
+				    	</code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    		    <!--DELETE offer -->
+		    <div id="delete-offer" class="section scrollspy">
+		    	<h5>DELETE Offer</h5>
+		       	<p class ="title"><b>DELETE 	/api/offer/offer/user_uuid_format=json</b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	No request body required!
+				    </code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>	
+
+		     <!--GET Bids -->
+		    <div id="get-bids" class="section scrollspy">
+		    	<h5>GET Bids</h5>
+		       	<p class ="title"><b>GET 	/api/bid/bid</b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	No request body required!
+				    </code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    <!--Save Bid -->
+		    <div id="save-bid" class="section scrollspy">
+		    	<h5>Save Bid</h5>
+		       	<p class ="title"><b>POST 	/api/bid/bid?_format=json</b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	No request body required!
+				    </code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    <!--Save Bid -->
+		    <div id="get-bid" class="section scrollspy">
+		    	<h5>GET Bid</h5>
+		       	<p class ="title"><b>GET 	/api/bid/bid/user_uuid_format=json</b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	No request body required!
+				    </code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		     <!--update Bid -->
+		    <div id="update-bid" class="section scrollspy">
+		    	<h5>UPDATE Bid</h5>
+		       	<p class ="title"><b>PATCH 	/api/bid/bid</b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	No request body required!
+				    </code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    <!--delete Bid -->
+		    <div id="delete-bid" class="section scrollspy">
+		    	<h5>DELETE Bid</h5>
+		       	<p class ="title"><b>DELETE 	/api/bid/bid </b></p>
+		        <hr class ="line">
+		    </div>
+
+		    	     <!--GET Transactions -->
+		    <div id="get-transactions" class="section scrollspy">
+		    	<h5>GET Transactions</h5>
+		       	<p class ="title"><b>GET 	/api/transaction/transaction?_format=json</b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	No request body required!
+				    </code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    <!--Save Transaction -->
+		    <div id="save-transaction" class="section scrollspy">
+		    	<h5>Save Transaction</h5>
+		       	<p class ="title"><b>POST 	/api/transaction/transaction?_format=json </b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	{
+	    "data": {
+	        "type": "transaction--transaction",
+	        "attributes": {
+	            "foreign_cur_ben_email": "eemuraye@gmail.com",
+	            "foreign_cur_ben_name": "Ese",
+	            "foreign_cur_transaction_id": "FOR123",
+	            "foreign_cur_transaction_status": "confirmed",
+	            "loc_cur_transaction_id": "LOC123",
+	            "local_cur_ben_email": "ese@gmail.com",
+	            "local_cur_beneficiary": "Joshua",
+	            "foreign_cur_transaction_status": "confirmed"
+	        }
+	    }
+	}
+				    </code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		    <!--GET Transaction -->
+		    <div id="get-transaction" class="section scrollspy">
+		    	<h5>GET Transaction</h5>
+		       	<p class ="title"><b>GET 	api/transaction/transaction/user_uuid_format=json</b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	No request body required!
+				    </code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+
+		     <!--UPDATE Transaction -->
+		    <div id="update-transaction" class="section scrollspy">
+		    	<h5>UPDATE Transaction</h5>
+		       	<p class ="title"><b>PATCH 	a/api/transaction/transaction/user_uuid_format=json</b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	{
+	    "data": {
+	        "type": "transaction--transaction",
+	        "attributes": {
+	            "foreign_cur_ben_email": "peace@gmail.com",
+	            "foreign_cur_ben_name": "Peace"
+	        }
+	    }
+	}		   
+				 </code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>
+		    		    <!--DELETE Transaction -->
+		    <div id="delete-transaction" class="section scrollspy">
+		    	<h5>DELETE Transaction</h5>
+		       	<p class ="title"><b>GET 	/api/transaction/transaction/transaction_uuid</b></p>
+		       	<p class="header"><b>HEADER</b></p>
+		        <pre class="content-Type">
+				
+	<code>Content-Type: application/vnd.api+json</code>
+		    	</pre>
+		        <p class ="body-request"><b>Body REQUEST format:</b></p>
+		        <pre class="request-format">
+			        <code>
+	No request body required!
+				    </code>
+		        </pre>
+		        <p class ="body-response"><b>Body RESPONSE format:</b></p>
+		        <pre class="response-format">
+		        	<code></code>
+		        </pre>
+		        <hr class ="line">
+		    </div>			  		    	   				    	   		    	   		    			    	   		    	        	    	    	        	    	        	    	        	    
+		</div>
+	</div>
+</div>
+	    <div class="col hide-on-small-only m3 l2 sideBar">
+		      <ul class="section table-of-contents ">
+		        <li><a href="#authentication">Authentication</a></li>
+		        <li><a href="#registration">Registration</a></li>
+		        <li><a href="#refresh-token">Refresh Token</a></li>
+		        <li><a href="#create-offer">CREATE Offer</a></li>
+		        <li><a href="#get-offer">GET Offer</a></li>
+		        <li><a href="#get-offers">GET Offers</a></li>
+		        <li><a href="#create-bid">CREATE Bid</a></li>
+		        <li><a href="#get-user">GET User</a></li>
+		        <li><a href="#get-user-by-username">Get User by Username</a></li>
+		        <li><a href="#save-offer">Save Offer</a></li>
+		        <li><a href="#get-available-offers">GET Available Offers</a></li>
+		        <li><a href="#get-user-available-offers">GET User Available Offers</a></li>
+		        <li><a href="#update-offer">UPDATE Offer</a></li>
+		        <li><a href="#delete-offer">DELETE Offer</a></li>
+		        <li><a href="#get-bids">GET Bids</a></li>
+		        <li><a href="#save-bid">Save Bid</a></li>
+		        <li><a href="#get-bid">GET Bid</a></li>
+		        <li><a href="#update-bid">UPDATE Bid</a></li>
+		        <li><a href="#delete-bid">DELETE Bid</a></li>
+		        <li><a href="#get-transactions">GET Transactions</a></li>
+		        <li><a href="#save-transaction">Save Transaction</a></li>
+		        <li><a href="#get-transaction">GET Transaction</a></li>
+		        <li><a href="#update-transaction">UPDATE Transaction</a></li>
+		        <li><a href="#delete-transaction">DELETE Transaction</a></li>
+	      	</ul>
+    	</div>
+  	</div>
+</body>
+</html>

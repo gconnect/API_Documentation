@@ -1,0 +1,58 @@
+.wrapper{
+	
+	margin-left: 240px;
+}
+
+.title{
+	background-color: blue;
+	margin-top: 20px;
+	padding:16px;
+	color:white;
+
+}
+
+.content-Type{
+	margin-top: 10px;
+	padding:8px;
+	border-color: black;
+}
+
+.header{
+	margin-top: 20px;
+	padding:8px;
+}
+
+
+.body-request{
+	margin-top: 20px;
+	padding:8px;
+
+}
+
+.body-response{
+	margin-top: 20px;
+	padding:8px;
+
+}
+
+.request-format{
+	margin-top: 10px;
+	padding:8px;
+	border-color: black;
+}
+
+.response-format{
+	margin-top: 10px;
+	padding:8px;
+	border-color: black;
+}
+
+.line{
+	margin-top: 40px;
+	border-bottom: solid #ccc;
+}
+
+.sideBar{
+	position: fixed;
+	top:30px;
+}
