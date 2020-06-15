@@ -23,7 +23,7 @@ Quick Guide
 
    licenses
    help
-
+   contents
 
 
 Indices and tables
